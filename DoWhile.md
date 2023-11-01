@@ -1,4 +1,4 @@
-var recuperacaoDeHP = 1
+var recuperacaoDeHP = 0
 var i = 0
 do{
 console.log("recupere seu HP " + i)
