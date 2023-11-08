@@ -14,7 +14,7 @@ if(xpInicial === 1000){
 else if (xpInicial >1.001 && xpInicial <=2.000){
     definicao = "Bronze"
 }
-else if (xpInicial >2.001 && xpInicial <=2.001){
+else if (xpInicial >2.001 && xpInicial <=6.001){
     definicao = "Prata"
 }
 else if(xpInicial >6.000 && xpInicial <=7.000){
