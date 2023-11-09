@@ -1,43 +1,55 @@
-var vitoria = 0
-var derrota = 0
-var saldoInicial = 0
-console.log(`O heroi começou o dia e ligou seu computador em busca do rank imortal com um saldo de ${saldoInicial}`)
+var saldo = {
+    vitoria : 0,
+    derrota : 0,
+    saldoInicial : 0
+}
+function inicioDaJornada(){
+    console.log(`O heroi começou o dia e ligou seu computador em busca do rank imortal com um saldo de ${saldo.saldoInicial}`)
+}
 function win() {
     for (let i = 0; i < 50 ; i++) {
-        vitoria++
+        saldo.vitoria++
     }
 }
 function loose(){
     for (let i = 0; i < 20 ; i++) {
-        derrota ++
+        saldo.derrota ++
         
     }
 }
 win()
 loose()
-
-var saldoInicial = vitoria - derrota
-var name = "Lucas Vieira Ferrari"
-var rank = ""
-if (saldoInicial<=10) {
-    rank= "ferro"
+var novoSaldo = {
+    saldoInicial : saldo.vitoria - saldo.derrota,
+    name : "Lucas Vieira Ferrari",
+    rank : "",
 }
-else if (saldoInicial>10 && saldoInicial<=20 ){
-    rank = "bronze"
+function classificação(){
+if (novoSaldo.saldoInicial<=10) {
+    novoSaldo.rank= "ferro"
 }
-else if (saldoInicial>20 && saldoInicial<=50) {
-    rank = "prata"
+else if (novoSaldo.saldoInicial>10 && novoSaldo.saldoInicial<=20 ){
+    novoSaldo.rank = "bronze"
 }
-else if  (saldoInicial>50 && saldoInicial<=80){
-    rank = "ouro"
+else if (novoSaldo.saldoInicial>20 && novoSaldo.saldoInicial<=50) {
+    novoSaldo.rank = "prata"
 }
-else if (saldoInicial>80 && saldoInicial <=90) {
-    rank = "diamente"
+else if  (novoSaldo.saldoInicial>50 && novoSaldo.saldoInicial<=80){
+    novoSaldo.rank = "ouro"
 }
-else if (saldoInicial>90 && saldoInicial<=100) {
-    rank = "lendario"
+else if (novoSaldo.saldoInicial>80 && novoSaldo.saldoInicial <=90) {
+    novoSaldo.rank = "diamante"
+}
+else if (novoSaldo.saldoInicial>90 && novoSaldo.saldoInicial<=100) {
+    novoSaldo.rank = "lendario"
 }
 else{
-    rank = "imortal"
+    novoSaldo.rank = "imortal"
 }
-console.log(`O heroi tem de saldo ${saldoInicial} ficando assim no nivel ${rank} ao final do dia.`)
+}
+function fimDaJornada(){
+    console.log(`O heroi tem de saldo ${novoSaldo.saldoInicial} ficando assim no nivel ${novoSaldo.rank} ao final do dia.`)
+}
+inicioDaJornada()
+classificação()
+fimDaJornada()
